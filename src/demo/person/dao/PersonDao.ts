@@ -15,6 +15,8 @@ export class DataAccess extends CommonDao {
     public async requiredDataPageDataByPageNp(pageNo: number): Promise<any> {
         if (this.model.page) {
             this.model.page.persons = await api.get('', pageNo, this.model.page.pageSize);
+        } else {
+            throw new Error('error');
         }
     }
 }

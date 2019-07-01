@@ -1,5 +1,6 @@
-import Person from './../model/Person';
-const personsLast: Person[] = [
+import Person from '../model/Person';
+import { translatorObjToClass } from '@/platform/utils';
+const personsLast = [
     {
         name: '张三',
         age: 28,
@@ -8,7 +9,7 @@ const personsLast: Person[] = [
         phone: '139xxxxxxxx',
     },
 ];
-const personsOne: Person[] = [
+const personsOne = [
     {
         name: '张三',
         age: 28,
@@ -86,9 +87,13 @@ export default {
             setTimeout(() => {
                 let result = null;
                 if (pageNum === 1) {
-                    result = personsOne;
+                    result = personsOne.map((item) => {
+                        return translatorObjToClass(item, Person);
+                    });
                 } else {
-                    result = personsLast;
+                    result = personsLast.map((item) => {
+                        return translatorObjToClass(item, Person);
+                    });
                 }
                 resolve(result);
             }, 1000);

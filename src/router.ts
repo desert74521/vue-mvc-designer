@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HomeBox from './views/layout/HomeBox.vue';
+import { PersonPage } from './demo/person/router';
+import { HomePage } from './demo/layout/router';
 
 Vue.use(Router);
 
@@ -9,17 +10,18 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: HomeBox,
+      component: HomePage,
       children: [
+        {
+          path: 'person_table',
+          name: 'person_table',
+          component: PersonPage,
+        },
         {
           path: 'hello',
           name: 'hello',
-          component: () => import('./views/hello_world/HelloWorld.vue'),
-        },
-        {
-          path: 'page_table',
-          name: 'page_table',
-          component: () => import('./views/page_table/PageTable.vue'),
+          component: HomePage,
+          redirect: '/',
         },
       ],
     },

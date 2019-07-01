@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="loading-box" v-if="$store.state.masking">
+    <div class="loading-box" v-if="$store.state.app.masking">
       <div class="loading-back"></div>
       <div class="loading-word">loading...</div>
     </div>

@@ -9,5 +9,5 @@ export default class HomePage {
   public sideWidth: number | undefined;
 
   @Expose()
-  public routers: string[] | undefined;
+  public routers: object[] | undefined;
 }

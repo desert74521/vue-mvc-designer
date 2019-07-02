@@ -12,7 +12,7 @@ export class DataAccess extends CommonDao {
 
     public toggleSideBar(): void {
         if (this.model.page) {
-            this.model.page.sideWidth = this.model.page.sideWidth === 80 ? 280 : 80;
+            this.model.page.sideWidth = this.model.page.sideWidth === 65 ? 200 : 65;
         }
 
     }

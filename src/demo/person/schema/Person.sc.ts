@@ -1,5 +1,5 @@
 export default {
-    $schema: 'http://json-schema.org/draft-04/schema#',
+    $schema: '/demo/person/schema/Person',
     title: 'Person',
     description: 'Person',
     type: 'object',

@@ -14,7 +14,7 @@
 
     </div>
     <div class="main-page" :style="'margin-left:' + model.page.sideWidth + 'px'">
-        <img v-if="$route.path=='/'" :src="model.page.homeImg" alt="">
+        <img v-if="$route.path == '/'" :src="model.page.homeImg" alt="">
         <router-view>
         </router-view>
     </div>
@@ -36,6 +36,7 @@ import { PageLoading } from '@/demo/common/components';
 export default class Home extends Vue {
   private model: CommonModel<HomePage> = {
     $store: this.$store,
+    $message: this.$message,
     page: {
         homeImg: require('@/assets/vue_mvc_designer.png'),
         sideWidth: 80,

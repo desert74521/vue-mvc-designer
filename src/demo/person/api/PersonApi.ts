@@ -1,5 +1,6 @@
 import Person from '../model/Person';
-import { translatorObjToClass } from '@/platform/utils';
+import PersonSc from '../schema/Person.sc';
+import { translatorObjToClass, validateJsonBySchema } from '@/platform/utils';
 const personsLast = [
     {
         name: '张三',
@@ -88,10 +89,12 @@ export default {
                 let result = null;
                 if (pageNum === 1) {
                     result = personsOne.map((item) => {
+                        validateJsonBySchema(item, PersonSc);
                         return translatorObjToClass(item, Person);
                     });
                 } else {
                     result = personsLast.map((item) => {
+                        validateJsonBySchema(item, PersonSc);
                         return translatorObjToClass(item, Person);
                     });
                 }

@@ -50,6 +50,7 @@ import { CommonModel } from '@/demo/common/CommonModel';
 export default class PageTable extends Vue {
   private model: CommonModel<PersonPage> = {
     $store: this.$store,
+    $message: this.$message,
     page: {
         persons: [],
         pageNum: 1,
@@ -63,8 +64,9 @@ export default class PageTable extends Vue {
   }
 
   private handleCurrentChange(val: number) {
-      this.service.requireAndRenderDataByPageNo(val);
+    this.service.requireAndRenderDataByPageNo(val);
   }
+
 }
 </script>
 

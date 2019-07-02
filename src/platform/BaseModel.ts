@@ -5,4 +5,6 @@ import { Exclude, Expose } from 'class-transformer';
 export class BaseModel {
   @Expose()
   public $store: any = '';
+  @Expose()
+  public $message: any | undefined;
 }

@@ -63,3 +63,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 	- main.ts
 	- router
 	- store
+
+##  jsonschema  
+校验
+##  class-transformer
+class转换
+

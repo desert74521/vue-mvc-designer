@@ -1,4 +1,4 @@
-import { translatorObjToClass } from '@/platform/utils';
+import { translatorObjToClass } from '@/demo/common/utils';
 import { CommonModel } from '@/demo/common/CommonModel';
 import { CommonDao } from '@/demo/common/CommonDao';
 import api from '../api/PersonApi';

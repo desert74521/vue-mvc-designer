@@ -14,8 +14,11 @@
 
     </div>
     <div class="main-page" :style="'margin-left:' + model.page.sideWidth + 'px'">
-        <router-view/>
+        <img v-if="$route.path=='/'" :src="model.page.homeImg" alt="">
+        <router-view>
+        </router-view>
     </div>
+    <page-loading :isLoading="$store.state.app.masking"></page-loading>
   </div>
 </template>
 
@@ -24,11 +27,17 @@ import { Component, Vue } from 'vue-property-decorator';
 import Service from '../service/HomeService';
 import HomePage from '../model/HomePage';
 import { CommonModel } from '@/demo/common/CommonModel';
-@Component
+import { PageLoading } from '@/demo/common/components';
+@Component({
+  components: {
+    PageLoading,
+  },
+})
 export default class Home extends Vue {
   private model: CommonModel<HomePage> = {
     $store: this.$store,
     page: {
+        homeImg: require('@/assets/vue_mvc_designer.png'),
         sideWidth: 80,
         routers: ['/person_table', '/hello'],
     },
